@@ -1,11 +1,16 @@
 from selenium import webdriver
+#from selenium.webdriver.common.keys import Keys
+
 browser='chrome'
 if(browser=='chrome'):
     driver =  webdriver.Chrome(executable_path='C:/Users/Roy/Downloads/Driver/chromedriver.exe')
 elif(browser=='firefox'):
     driver = webdriver.Firefox(executable_path='C:/Users/Roy/Downloads/Driver/geckodriver.exe')
+elif(browser=='IE'):
+    driver = webdriver.InternetExplorer(executable_path='C:/Users/Roy/Downloads/Driver/IEDriverServer.exe')
 else:
     print("No browser path found")
+
 driver.get('http://www.facebook.com')
 driver.implicitly_wait(30)
 driver.find_element_by_name("firstname").send_keys("Test Name")
